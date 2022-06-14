@@ -1,0 +1,45 @@
+{% extends 'index.html'%}
+
+{% block content %}
+<form action="/process_money" method="post">
+    {% csrf_token %}
+    <div class="row row-cols-4 text-center">
+
+
+    <div class="col card m-1 p-2 w24">
+        {% csrf_token %}
+        <input type="hidden" name="location" id="" value="{{Farm}}">
+        <h2>Farm</h2>
+        <p> (earn 10-20 gold)</p>
+        <button type="submit"> find Gold! </button>
+    </div>
+
+    
+    <div class="col card m-1 p-2 w24">
+        <input type="hidden" name="location" id="" value="{{Cave}}">
+        <h2>Cave</h2>
+        <p> (earn 10-20 gold)</p>
+        <button type="submit"> find Gold! </button>
+    </div>
+
+
+    <div class="col card m-1 p-2 w24">
+        <input type="hidden" name="location" id="" value="{{House}}">
+        <h2>House</h2>
+        <p> (earn 10-20 gold)</p>
+        <button type="submit"> find Gold! </button>
+    </div>
+
+
+    <div class="col card m-1 p-2 w24">
+        <input type="hidden" name="location" id="" value="{{Quest}}">
+        <h2>Quest</h2>
+        <p> (earns/takes 0-50 gold)</p>
+        <button type="submit"> find Gold! </button>
+    </div>
+
+
+</div>
+</form>
+
+{% endblock %}

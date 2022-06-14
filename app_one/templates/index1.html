@@ -1,0 +1,21 @@
+{% extends 'index.html'%}
+
+{% block content %}
+{% csrf_token %}
+<div class="row row-cols-4">
+
+    {% for location in goldLocations %}
+    <div class="col card m-1 p-2 w24 text-center">
+    <form action="/process_money" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="location" id="" value="{{location}}">
+            <h2>{{location}}</h2>
+            <p> (earn 10-20 gold)</p>
+            <button type="submit"> find Gold! </button>
+        </form>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}
